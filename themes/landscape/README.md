@@ -1,6 +1,5 @@
 # Landscape
 
-
 A brand new default theme for [Hexo].
 
 - [Preview](http://hexo.io/hexo-theme-landscape/)
