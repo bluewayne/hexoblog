@@ -5,7 +5,7 @@ id: 5
 updated: '2016-07-11 23:25:02'
 date: 2016-07-11 21:17:18
 tags:
-categories:
+categories: javascript
 ---
 
 

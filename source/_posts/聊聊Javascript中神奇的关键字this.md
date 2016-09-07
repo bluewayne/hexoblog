@@ -5,7 +5,7 @@ id: 4
 updated: '2016-07-09 23:58:26'
 date: 2016-07-09 22:51:16
 tags:
-categories:
+categories: javascript
 ---
 
 转载请注明链接

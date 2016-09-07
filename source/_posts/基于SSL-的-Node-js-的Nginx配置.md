@@ -5,7 +5,7 @@ id: 3
 updated: '2016-07-04 17:01:14'
 date: 2016-06-23 15:46:11
 tags:
-categories:
+categories: nginx
 ---
 
 **转载请注明链接**

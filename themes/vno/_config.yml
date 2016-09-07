@@ -89,7 +89,8 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: old site, description: My Projects, url: 'http://new.brusport.com/'}
+    - {title: archive, description: archive, url: '/archives'}
+    - {title: old site, description: old site, url: '/'}
 
 # you can visit http://dev.duoshuo.com get duoshuo user id.
 duoshuo_info:
