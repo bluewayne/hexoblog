@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>聊聊Javascript中神奇的关键字this | bruce blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="转载请注明链接http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/this是javascript中比较tricky的关键字之一.如果你不清楚它的工作的原理的话很难去使用它.
+下面我们以this在javacript中的事件处理中的表现来解释this的用法.
+==Owener==
+owner翻译过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊聊Javascript中神奇的关键字this">
+<meta property="og:url" content="http://brusport.com/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/index.html">
+<meta property="og:site_name" content="bruce blog">
+<meta property="og:description" content="转载请注明链接http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/this是javascript中比较tricky的关键字之一.如果你不清楚它的工作的原理的话很难去使用它.
+下面我们以this在javacript中的事件处理中的表现来解释this的用法.
+==Owener==
+owner翻译过">
+<meta property="og:updated_time" content="2016-07-09T15:58:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="聊聊Javascript中神奇的关键字this">
+<meta name="twitter:description" content="转载请注明链接http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/this是javascript中比较tricky的关键字之一.如果你不清楚它的工作的原理的话很难去使用它.
+下面我们以this在javacript中的事件处理中的表现来解释this的用法.
+==Owener==
+owner翻译过">
+  
+    <link rel="alternative" href="/atom.xml" title="bruce blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col1">
+    
+
+<header class="panel-cover panel-cover--collapsed" style="background-image: url('/img/vno/background-cover.jpg')">
+	<div class="panel-main">
+
+		<div class="panel-main__inner panel-inverted">
+			<div class="panel-main__content">
+
+				<a href="/" title="前往 bruce 的主页" class="blog-button"><img lazy-src="/img/vno/avatar.jpg" class="js-avatar panel-cover__logo logo"  width="80" alt="bruce blog logo" /></a>
+				<h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for bruce blog" class="blog-button">bruce blog</a></h1>
+				
+				<span class="panel-cover__subtitle panel-subtitle">share ideas and stories</span>
+
+				
+				<hr class="panel-cover__divider" />
+				<p class="panel-cover__description">hard to define what kind of life is most beautiful. </p>
+				<hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+				
+				<p class="panel-cover__description">
+					welcome
+
+					 </p>
+				
+
+				<div class="navigation-wrapper">
+					<div>
+						<nav class="cover-navigation cover-navigation--primary">
+							<ul class="navigation">
+								<li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">Blog</a></li>
+								
+								<li class="navigation__item"><a href="http://new.brusport.com/" target="_blank" title="My Projects">old site</a></li>
+								
+							</ul>
+						</nav>
+					</div>
+
+					<div>
+						<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/ljhjay" title="@ljhjay 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:ljhjay1@163.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="panel-cover--overlay cover-red"></div>
+		
+	</div>
+</header>
+
+
+
+
+
+<!--<div class="overlay"></div>-->
+<!--<div class="intrude-less">-->
+	<!--<header id="header" class="inner">-->
+		<!--<a href="/" class="profilepic">-->
+			<!---->
+			<!--<img lazy-src="null/img/vno/avatar.jpg" class="js-avatar">-->
+			<!---->
+		<!--</a>-->
+
+		<!--<hgroup>-->
+		  <!--<h1 class="header-author"><a href="/">bruce</a></h1>-->
+		<!--</hgroup>-->
+
+		<!---->
+		<!--<p class="header-subtitle">share ideas and stories</p>-->
+		<!---->
+
+		<!---->
+			<!--<div class="switch-btn">-->
+				<!--<div class="icon">-->
+					<!--<div class="icon-ctn">-->
+						<!--<div class="icon-wrap icon-house" data-idx="0">-->
+							<!--<div class="birdhouse"></div>-->
+							<!--<div class="birdhouse_holes"></div>-->
+						<!--</div>-->
+						<!--<div class="icon-wrap icon-ribbon hide" data-idx="1">-->
+							<!--<div class="ribbon"></div>-->
+						<!--</div>-->
+						<!---->
+						<!--<div class="icon-wrap icon-link hide" data-idx="2">-->
+							<!--<div class="loopback_l"></div>-->
+							<!--<div class="loopback_r"></div>-->
+						<!--</div>-->
+						<!---->
+						<!---->
+						<!--<div class="icon-wrap icon-me hide" data-idx="3">-->
+							<!--<div class="user"></div>-->
+							<!--<div class="shoulder"></div>-->
+						<!--</div>-->
+						<!---->
+					<!--</div>-->
+					<!-- -->
+				<!--</div>-->
+				<!--<div class="tips-box hide">-->
+					<!--<div class="tips-arrow"></div>-->
+					<!--<ul class="tips-inner">-->
+						<!--<li>菜单</li>-->
+						<!--<li>标签</li>-->
+						<!---->
+						<!--<li>友情链接</li>-->
+						<!---->
+						<!---->
+						<!--<li>关于我</li>-->
+						<!---->
+					<!--</ul>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!---->
+
+		<!--<div class="switch-area">-->
+			<!--<div class="switch-wrap">-->
+				<!--<section class="switch-part switch-part1">-->
+					<!--<nav class="header-menu">-->
+						<!--<ul>-->
+						<!---->
+							<!--<li><a href="/">主页</a></li>-->
+				        <!---->
+							<!--<li><a href="/archives">所有文章</a></li>-->
+				        <!---->
+						<!--</ul>-->
+					<!--</nav>-->
+					<!--<nav class="header-nav">-->
+						<!--<div class="social">-->
+							<!---->
+								<!--<a class="github" target="_blank" href="#" title="github">github</a>-->
+					        <!---->
+								<!--<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>-->
+					        <!---->
+								<!--<a class="rss" target="_blank" href="#" title="rss">rss</a>-->
+					        <!---->
+								<!--<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>-->
+					        <!---->
+						<!--</div>-->
+					<!--</nav>-->
+				<!--</section>-->
+				<!-- -->
+				<!---->
+				<!--<section class="switch-part switch-part2">-->
+					<!--<div class="widget tagcloud" id="js-tagcloud">-->
+						<!---->
+					<!--</div>-->
+				<!--</section>-->
+				<!---->
+				<!-- -->
+				<!---->
+				<!--<section class="switch-part switch-part3">-->
+					<!--<div id="js-friends">-->
+					<!---->
+			          <!--<a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>-->
+			        <!---->
+			          <!--<a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>-->
+			        <!---->
+			          <!--<a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>-->
+			        <!---->
+			          <!--<a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>-->
+			        <!---->
+			          <!--<a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>-->
+			        <!---->
+			          <!--<a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>-->
+			        <!---->
+			        <!--</div>-->
+				<!--</section>-->
+				<!---->
+
+				<!---->
+				<!---->
+				<!--<section class="switch-part switch-part4">-->
+				<!---->
+					<!--<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>-->
+				<!--</section>-->
+				<!---->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</header>				-->
+<!--</div>-->
+
+    </div>
+    <div class="mid-col">
+      <!--<nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">bruce</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img lazy-src="null/img/vno/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">bruce</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">share ideas and stories</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+-->
+
+      <div class="body-wrap"><article id="post-liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this" class="article article-type-post" itemscope
+         itemprop="blogPost">
+    <!---->
+    <!--<div class="article-meta">-->
+        <!--<span  class="article-date">
+  	<time datetime="2016-07-09T14:51:16.000Z" itemprop="datePublished">2016-07-09</time>
+</span>-->
+    <!--</div>-->
+    <!---->
+
+    <div class="article-inner">
+        
+        <input type="hidden" class="isFancy"/>
+        
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      聊聊Javascript中神奇的关键字this
+    </h1>
+  
+
+
+            <div>
+                <div class="article-meta">
+                    
+                    <span  class="article-date">
+  	<time datetime="2016-07-09T14:51:16.000Z" itemprop="datePublished">2016-07-09</time>
+</span>
+                    
+
+                    <!--| 分类于 技术水波文 | 92条评论 |  9891-->
+
+                    
+
+                    
+                    <!--/////////////////////////////////////////////////////////////////////////////-->
+
+                    
+                    
+                    <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/#article-comments" itemprop="discussionUrl">
+                    <span class="post-comments-count ds-thread-count" data-thread-key="liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this"
+                          itemprop="commentsCount"></span>
+                </a>
+              </span>
+                    
+                    
+
+                    
+
+                    <span id="/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/" class="leancloud_visitors" data-flag-title="聊聊Javascript中神奇的关键字this ">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">
+                   
+               </span>
+                    阅读次数
+               <span class="leancloud-visitors-count"></span>
+              </span>
+                    
+
+                </div>
+
+
+            </div>
+
+        </header>
+        <!---->
+        <!--<div class="article-info article-info-post">-->
+        <!---->
+        <!--
+-->
+        <!--<div class="clearfix"></div>-->
+        <!--</div>-->
+        <!---->
+        <!---->
+        <div class="article-entry" itemprop="articleBody">
+            
+            <p>转载请注明链接<br><a href="http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/" target="_blank" rel="external">http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/</a><br>this是javascript中比较tricky的关键字之一.如果你不清楚它的工作的原理的话很难去使用它.</p>
+<p>下面我们以this在javacript中的事件处理中的表现来解释this的用法.</p>
+<p>==Owener==</p>
+<p>owner翻译过来过来就是拥有者的意思.<br>下面我们主要通过解释下面的这个函数doSomething()中的this指向哪个owner，来解释this的用法.</p>
+<p><code>function doSomething(){
+   this.style.color=&#39;#cc0000&#39;
+ }</code></p>
+<p>在javascript中this往往指向的是执行相应的函数的woner(环境或者宿主).或者指向包含该函数的对象.当我们定义简单的在页面中定义函数doSomething()的时候，这时候对应的owner就是页面本身，或者javascript中的window对象.一般的页面元素拥有onclick属性.它们之间的从属关系如下图:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">------------ window --------------------------------------</div><div class="line">|                                          / \           |</div><div class="line">|                                           |            |</div><div class="line">|                                          this          |</div><div class="line">|   ----------------                        |            |</div><div class="line">|   | HTML element | &lt;-- this         -----------------  |</div><div class="line">|   ----------------      |           | <span class="keyword">do</span>Something() |  |</div><div class="line">|               |         |           -----------------  |</div><div class="line">|          --------------------                          |</div><div class="line">|          | onclick property |                          |</div><div class="line">|          --------------------                          |</div><div class="line">|                                                        |</div><div class="line">----------------------------------------------------------</div></pre></td></tr></table></figure></p>
+<p>如果你直接执行doSomething(),则this会直接指向window对象.doSomething函数中会试着去改变window的style.color熟悉。由于window对象不存在style熟悉，所以执行doSomething()会报错.</p>
+<p>==Copying==</p>
+<p>这里的copy是指,把看起来单独的函数 赋给适当的元素属性上.<br>如果我们最大程度的利用this,我们必须注意让正确的html元素拥有对应的函数.也就说说，我们必须把doSomething函数赋给对应的html元素的onclick属性.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">element.onclick = <span class="keyword">do</span>Something; //element就是指html中的元素，可以是button,a,甚至div...</div></pre></td></tr></table></figure>
+<p>通过这个赋值语句，函数为赋于了html元素的onclick属性上.( 如果一个函数充当某个对象的属性，只是函数可以叫方法).所以这时候你执行onclick的时候,this指向的是element.由于html的元素拥有color属性，所以执行doSomething不会报错，同事颜色会做相应改变.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">------------ window --------------------------------------</div><div class="line">|                                                        |</div><div class="line">|                                                        |</div><div class="line">|                                                        |</div><div class="line">|   ----------------                                     |</div><div class="line">|   | HTML element | &lt;-- this         -----------------  |</div><div class="line">|   ----------------      |           | <span class="keyword">do</span>Something() |  |</div><div class="line">|               |         |           -----------------  |</div><div class="line">|          -----------------------          |            |</div><div class="line">|          |copy of <span class="keyword">do</span>Something()|  &lt;-- copy <span class="keyword">function</span>    |</div><div class="line">|          -----------------------                       |</div><div class="line">|                                                        |</div><div class="line">----------------------------------------------------------</div></pre></td></tr></table></figure></p>
+<p>因此通过这种方法，你可以最大程度上使用this.每次函数被调用,this就会指向html对应的元素.html元素拥有doSomething()的副本.</p>
+<p>==Referring==</p>
+<p>然后如果你使用内联html元素事件注册.如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;element onclick=<span class="string">"doSomething()"</span>&gt;</div></pre></td></tr></table></figure>
+<p>只是给onclick指向doSomething的调用引用，而不是通过直接给onclick属性赋予doSomething的副本.这区别是很大的.因为此时的onclick属性不包含正式的doSomething函数，而只是包含soSomething的调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span>Something();</div></pre></td></tr></table></figure>
+<p>所以当执行doSomething()的时候，this再一次指向全局 window对象，再一次会执行错误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">------------ window --------------------------------------</div><div class="line">|                                          / \           |</div><div class="line">|                                           |            |</div><div class="line">|                                          this          |</div><div class="line">|   ----------------                        |            |</div><div class="line">|   | HTML element | &lt;-- this         -----------------  |</div><div class="line">|   ----------------      |           | <span class="keyword">do</span>Something() |  |</div><div class="line">|               |         |           -----------------  |</div><div class="line">|          -----------------------         / \           |</div><div class="line">|          | go to <span class="keyword">do</span>Something() |          |            |</div><div class="line">|          | and execute it      | ---- reference to     |</div><div class="line">|          -----------------------       <span class="keyword">function</span>        |</div><div class="line">|                                                        |</div><div class="line">----------------------------------------------------------</div></pre></td></tr></table></figure>
+<p>==The difference==</p>
+<p>如果你想使用this去访问处理onclick事件的的html元素,你必须保证this关键字写到onclick属性中.只有这样，让this才指向被onclick所注册的html元素.你可以做如下测试:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">element.onclick = <span class="keyword">do</span>Something;</div><div class="line">alert(element.onclick)</div></pre></td></tr></table></figure>
+<p>你讲看到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">doSomething</span></span>()</div><div class="line">&#123;</div><div class="line">	this.style.color = <span class="string">'#cc0000'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>正如你看到的，this关键字出现在onclick方法中.因此this指向html元素.<br>但是如果你测试如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;element onclick=<span class="string">"doSomething()"</span>&gt;</div><div class="line">alert(element.onclick)</div></pre></td></tr></table></figure></p>
+<p>你将看到:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">onclick</span></span>()</div><div class="line">&#123;</div><div class="line">	<span class="keyword">do</span>Something()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>this关键字没有在onclick方法中，所以它没有指向html元素<br>==Examples - copying==</p>
+<p>下面列出直接将this写进onclick方法的写法:</p>
+<p>element.onclick = doSomething<br>element.addEventListener(‘click’,doSomething,false)<br>element.onclick = function () {this.style.color = ‘#cc0000’;}</p>
+<element onclick="this.style.color = '#cc0000';">
+
+<p>==Examples - referring==</p>
+<p>下面列出直接将this指向window对象的写法:</p>
+<p>element.onclick = function () {doSomething()}<br>element.attachEvent(‘onclick’,doSomething)</p>
+<element onclick="doSomething()">
+
+<p>需要注意的是attachEvent().微软事件注册模式的主要缺点是attachEvent（）会生成一个指向函数调用的引用而不是复制函数本身.</p>
+<p>==Combination==</p>
+<p>下面我们说个技巧，如果我们既要想用代码内联形式做事件处理注册，又想对应的处理函数中的 this能正确执行，可以参考下面的做法:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;element onclick=<span class="string">"doSomething(this)"</span>&gt;</div><div class="line"><span class="keyword">function</span> <span class="keyword">do</span>Something(obj) &#123;</div><div class="line">	// this is present <span class="keyword">in</span> the event handler and is sent to the <span class="keyword">function</span></div><div class="line">	// obj now refers to the HTML element, so we can <span class="keyword">do</span></div><div class="line">	obj.style.color = <span class="string">'#cc0000'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>thx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">refer to http://www.quirksmode.org/js/this.html</div></pre></td></tr></table></figure>
+<p><code>bruce liu                           --2016,7.9.</code></p>
+</element></element>
+            
+        </div>
+        
+    </div>
+    
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/11/xian-tan-javascriptde-bi-bao-ji-zhi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          闲谈javascript的闭包机制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/23/ji-zhu-biao-ti-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于SSL 的 Node.js 的Nginx配置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+    
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp;  asfad</span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+<div class="duoshuo"  id="article-comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this" data-title="聊聊Javascript中神奇的关键字this" data-url="http://brusport.com/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"brusport"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+<!---->
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 bruce
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+	<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+<script src="/js/require-2.2.0.js"></script>
+
+<script>
+
+
+//	alert("dafasdf");
+    var root_url='/';
+//	root_url.replace(/, '/')
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: root_url
+	}
+
+requirejs.config({
+	baseUrl: 'js/',
+	paths: {
+		// the left side is the module ID,
+		// the right side is the path to
+		// the jQuery file, relative to baseUrl.
+		// Also, the path should NOT include
+		// the '.js' file extension. This example
+		// is using jQuery 1.9.0 located at
+		// js/lib/jquery-1.9.0.js, relative to
+		// the HTML page.
+		jquery: 'jquery'
+	}
+});
+</script>
+<script src="/js/jquery.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/vno-main.js"></script>
+
+
+
+
+
+
+<!--<script type="text/x-mathjax-config">-->
+<!--MathJax.Hub.Config({-->
+    <!--tex2jax: {-->
+        <!--inlineMath: [ ['$','$'], ["\\(","\\)"]  ],-->
+        <!--processEscapes: true,-->
+        <!--skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']-->
+    <!--}-->
+<!--});-->
+
+<!--MathJax.Hub.Queue(function() {-->
+    <!--var all = MathJax.Hub.getAllJax(), i;-->
+    <!--for(i=0; i < all.length; i += 1) {-->
+        <!--all[i].SourceElement().parentNode.className += ' has-jax';                 -->
+    <!--}       -->
+<!--});-->
+<!--</script>-->
+
+<!--<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">-->
+<!--</script>-->
+
+
+    
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("95iK7zWeYGzN5r7O1a4JLWpq-gzGzoHsz", "00sMPE3U2p1xHpmqjz6oL7ri");</script>
+  <script>
+
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+
+
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+
+      query.find({
+        success: function(results) {
+
+
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+
+
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+
+//      var TestObject = AV.Object.extend('TestObject');
+//      var testObject = new TestObject();
+//      testObject.save({
+//        testabc: 'abc123'
+//      }).then(function() {
+//        alert('LeanCloud works!');
+//      }).catch(function(err) {
+//        alert('error:' + err);
+//      });
+
+      var Counter = AV.Object.extend("Counter");
+
+//      alert(JSON.toString($('.leancloud_visitors')));
+//      alert('length visitor:  '+$('.leancloud_visitors').length);
+//      alert('length link:  '+$('.post-title-link').length);
+
+
+//      showTime(Counter);
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.leancloud_visitors').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+  </div>
+</body>
+</html>
