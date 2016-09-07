@@ -1,0 +1,115 @@
+welcome_message: welcome
+creator: <a href="mailto:ljhjay1@163.com?subject=something to talk&body=hi bruce">@bruce</a>
+
+
+# Header
+menu:
+  主页: /
+  所有文章: /archives
+  # 随笔: /tags/随笔
+
+# SubNav
+subnav:
+  github: "#"
+  weibo: "#"
+  rss: "#"
+  zhihu: "#"
+  #douban: "#"
+  #mail: "#"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# 是否需要修改 root 路径
+# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
+# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+root:
+
+# Content
+excerpt_link: 阅读全文
+fancybox: true
+mathjax: true
+
+# 是否开启动画效果
+animate: true
+
+# 是否在新窗口打开链接
+open_in_new: false
+
+# Miscellaneous
+google_analytics: ''
+favicon: /favicon.png
+
+#你的头像url
+avatar: /img/vno/avatar.jpg
+#是否开启分享
+share_jia: true
+share_addthis: false
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+duoshuo: true
+#是否开启云标签
+tagcloud: true
+
+#是否开启友情链接
+#不开启——
+#friends: false
+#开启——
+friends:
+  奥巴马的博客: http://localhost:4000/
+  卡卡的美丽传说: http://localhost:4000/
+  本泽马的博客: http://localhost:4000/
+  吉格斯的博客: http://localhost:4000/
+  习大大大不同: http://localhost:4000/
+  托蒂的博客: http://localhost:4000/
+
+#是否开启“关于我”。
+#不开启——
+#aboutme: false
+#开启——
+aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: red
+
+# Social
+social:
+    weibo: ljhjay
+    github:
+    twitter:
+    gplus:
+    mail: ljhjay1@163.com
+
+blog_button:
+  title: Blog
+  description: Visit blog
+
+# Navigation buttons in the front page.
+nav:
+    - {title: old site, description: My Projects, url: 'http://new.brusport.com/'}
+
+# you can visit http://dev.duoshuo.com get duoshuo user id.
+duoshuo_info:
+  ua_enable: true
+  admin_enable: false
+  user_id: 0
+
+# Duoshuo ShortName
+duoshuo_shortname: brusport
+
+# You can visit https://leancloud.cn get AppID and AppKey.
+leancloud_visitors:
+  enable: true
+  app_id: 95iK7zWeYGzN5r7O1a4JLWpq-gzGzoHsz
+  app_key: 00sMPE3U2p1xHpmqjz6oL7ri
+
+  # You can visit https://leancloud.cn get AppID and AppKey.
+busuanzi_count:
+  enable: false
+  app_id: 95iK7zWeYGzN5r7O1a4JLWpq
+  app_key: 00sMPE3U2p1xHpmqjz6oL7ri
+
+comments: true

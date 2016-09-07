@@ -1,0 +1,49 @@
+<% if (theme.fancybox){ %>
+	<%- css('fancybox/jquery.fancybox') %>
+<% } %>
+<%- js('js/require-2.2.0.js') %>
+
+<script>
+
+
+//	alert("dafasdf");
+    var root_url='<%=config.root%>';
+//	root_url.replace(/, '/')
+	var yiliaConfig = {
+		fancybox: <%=theme.fancybox%>,
+		mathjax: <%=theme.mathjax%>,
+		animate: <%=theme.animate%>,
+		isHome: <%=is_home()%>,
+		isPost: <%=is_post()%>,
+		isArchive: <%=is_archive()%>,
+		isTag: <%=is_tag()%>,
+		isCategory: <%=is_category()%>,
+		open_in_new: <%=theme.open_in_new%>,
+		root: root_url
+	}
+
+requirejs.config({
+	baseUrl: 'js/',
+	paths: {
+		// the left side is the module ID,
+		// the right side is the path to
+		// the jQuery file, relative to baseUrl.
+		// Also, the path should NOT include
+		// the '.js' file extension. This example
+		// is using jQuery 1.9.0 located at
+		// js/lib/jquery-1.9.0.js, relative to
+		// the HTML page.
+		jquery: 'jquery'
+	}
+});
+</script>
+<%- js('js/jquery.js') %>
+<%- js('js/main') %>
+<%- js('js/vno-main') %>
+
+
+<%- partial('google-analytics') %>
+
+<% if (theme.mathjax){ %>
+<%- partial('mathjax') %>
+<% } %>
