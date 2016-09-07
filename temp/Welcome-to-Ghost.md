@@ -1,8 +1,6 @@
 ---
 title: Welcome to Ghost
-tags: |-
 
-  - Getting Started
 permalink: welcome-to-ghost
 id: 1
 updated: '2016-06-23 13:56:59'

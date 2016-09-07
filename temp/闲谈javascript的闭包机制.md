@@ -55,7 +55,7 @@ function celebrityName (firstName) {
     return lastName;
 }
 var mjName = celebrityName ("Michael"); // 返回的是lastName
-mjName ("Jackson"); // This celebrity is Michael Jackson
+mjName ("Jackson"); // This celebrity is Michael Jackson 
 // 闭包 (lastName) 被调用
 // 如结果所示，闭包还是可以直接访问外部函数的变量和参数
 ```
@@ -101,7 +101,7 @@ mjID.getID(); // 567: 将会返回最新的外部函数的变量值
 }
 ​var actionCelebs = [{name:"Stallone", id:0}, {name:"Cruise", id:0}, {name:"Willis", id:0}];
 ​var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
-​var stalloneID = createIdForActionCelebs [0];
+​var stalloneID = createIdForActionCelebs [0];  
 console.log(stalloneID.id()); // 103
 ```
 有没有发现输出的结果有点出乎意料，为什么结果不是100而是103.之前这个例子中，随着这个异步函数被一次次的被调用，i最好被递增到3.用于闭包是通过引用访问外部函数的变量,而不是通过值.所以调用闭包时，最后的返回值都是103.
@@ -122,7 +122,7 @@ console.log(stalloneID.id()); // 103
 }
 ​var actionCelebs = [{name:"Stallone", id:0}, {name:"Cruise", id:0}, {name:"Willis", id:0}];
 ​var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
-​var stalloneID = createIdForActionCelebs [0];
+​var stalloneID = createIdForActionCelebs [0];  
 console.log(stalloneID.id()); // 103
 ```
 

@@ -73,7 +73,7 @@ server {
 server {
   listen       8080;#我的个人博客是放在aws的ubuntu环境里，对外开放的端口是80,所以在我的配置文件里面是写80,所以配置因人而异
   server_name  localhost;#如果你用域名，可以用域名代替，比如www.brusport.com
-`
+``` bash
   location / {
     proxy_pass http://localhost:3000;
     proxy_http_version 1.1;
@@ -85,7 +85,8 @@ server {
   location /public {
     root /usr/local/var/www;
   }
-}`
+}
+```
 如你所看到的，上面的nginx配置监听http://localhost:8080. 同时Location/ 块是用来告诉Ngnix如何处理外来的请求.在location块中我们用proxy_pass来指定Node.js来处理请求(在我们例子中就是指http://localhost:3000)
 
 同时我们还需要一个Location /public块来告诉Ngnix如何处理静态资源的请求.在这个location块中我们设置了目录/usr/local/var/www,又来指定静态资源的目录(当然这个目录根据每个人的实际情况而定).所以如果有如下情况http://localhost:8080/public/somepath/file.html 实际上ngnix将会访问文件 /usr/local/var/www/public/somepath/file.html.
@@ -108,12 +109,12 @@ nginx -s reload
 搭建一个正式的网站，大多数你需要配置SSL来保护敏感信息.正常我们一般会去一个认证机构同时得到一个颁发的证书.当然你也可以创建一个自己签名的正书.但是在别人的浏览器打开网站会警告“此证书不能被信赖”.但是如果只是出于本地测试，显示是正常的.下面我们讨论如何创建自己的SSL证书.
 
 一旦你已经拥有SSL证书和一个私钥你就可以在Ngnix配置SSL.修改配置如下:
-`
+``` bash
 server {
  listen       8080;
  listen       443 ssl;
  server_name  localhost;
- ssl_certificate  /etc/nginx/ssl/server.crt 
+ ssl_certificate  /etc/nginx/ssl/server.crt
  ssl_certificate_key /etc/nginx/ssl/server.key
  location / {
     proxy_pass http://localhost:3000;
@@ -126,7 +127,8 @@ server {
   location /public {
     root /usr/local/var/www;
   }
-}`
+}
+```
 
 如上所示，就是这么简单。现在你访问https://localhost:8080, SSL设置将正常工作./etc/nginx/ssl/server.crt and /etc/nginx/ssl/server.key 分别是你本地存储证书文件和私钥的位置（ 路径根据具体情况而改变）。
 
