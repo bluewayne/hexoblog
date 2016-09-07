@@ -40,6 +40,7 @@ owner翻译过来过来就是拥有者的意思.
 |                                                        |
 ----------------------------------------------------------
 ```
+<!--more-->
 
 如果你直接执行doSomething(),则this会直接指向window对象.doSomething函数中会试着去改变window的style.color熟悉。由于window对象不存在style熟悉，所以执行doSomething()会报错.
 
@@ -154,7 +155,6 @@ element.attachEvent('onclick',doSomething)
 <element onclick="doSomething()">
 
 需要注意的是attachEvent().微软事件注册模式的主要缺点是attachEvent（）会生成一个指向函数调用的引用而不是复制函数本身.
-
 
 ==Combination==
 

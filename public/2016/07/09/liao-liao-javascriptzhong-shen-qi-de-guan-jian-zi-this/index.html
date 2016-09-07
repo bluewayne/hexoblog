@@ -396,6 +396,7 @@ owner翻译过">
    this.style.color=&#39;#cc0000&#39;
  }</code></p>
 <p>在javascript中this往往指向的是执行相应的函数的woner(环境或者宿主).或者指向包含该函数的对象.当我们定义简单的在页面中定义函数doSomething()的时候，这时候对应的owner就是页面本身，或者javascript中的window对象.一般的页面元素拥有onclick属性.它们之间的从属关系如下图:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">------------ window --------------------------------------</div><div class="line">|                                          / \           |</div><div class="line">|                                           |            |</div><div class="line">|                                          this          |</div><div class="line">|   ----------------                        |            |</div><div class="line">|   | HTML element | &lt;-- this         -----------------  |</div><div class="line">|   ----------------      |           | <span class="keyword">do</span>Something() |  |</div><div class="line">|               |         |           -----------------  |</div><div class="line">|          --------------------                          |</div><div class="line">|          | onclick property |                          |</div><div class="line">|          --------------------                          |</div><div class="line">|                                                        |</div><div class="line">----------------------------------------------------------</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>如果你直接执行doSomething(),则this会直接指向window对象.doSomething函数中会试着去改变window的style.color熟悉。由于window对象不存在style熟悉，所以执行doSomething()会报错.</p>
 <p>==Copying==</p>
 <p>这里的copy是指,把看起来单独的函数 赋给适当的元素属性上.<br>如果我们最大程度的利用this,我们必须注意让正确的html元素拥有对应的函数.也就说说，我们必须把doSomething函数赋给对应的html元素的onclick属性.</p>
@@ -465,7 +466,7 @@ owner翻译过">
 <div class="share_jia">
 	<!-- JiaThis Button BEGIN -->
 	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到: &nbsp;  asfad</span>
+		<span class="jiathis_txt">分享到: &nbsp; </span>
 		<a class="jiathis_button_facebook"></a> 
     <a class="jiathis_button_twitter"></a>
     <a class="jiathis_button_plus"></a> 

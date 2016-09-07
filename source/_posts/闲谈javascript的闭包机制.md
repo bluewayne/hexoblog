@@ -38,6 +38,8 @@ $(function(){
 })
 
 ```
+<!--more-->
+
 ==Closures’ Rules and Side Effects==
 
 下面我们谈谈闭包的使用准则和副作用.

@@ -392,6 +392,7 @@
 <p>这个内部函数(闭包)不但可以访问它直接外部函数的变量，还可以访问外部函数的参数.但是要注意的是，内部函数不可以访问外部函数参数的arguments对象。</p>
 <p>下面我们举个简单的闭包例子<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> showName(firstName,lastName)&#123;</div><div class="line"> <span class="built_in">return</span> (<span class="keyword">function</span> <span class="function"><span class="title">makeFullName</span></span>()&#123;</div><div class="line">       <span class="built_in">return</span> <span class="string">'my name is '</span>+firstName+<span class="string">' '</span>+lastName+<span class="string">' '</span>;</div><div class="line">    &#125;)();</div><div class="line">&#125;</div><div class="line">showName(<span class="string">'liu'</span>,<span class="string">'bruce'</span>);//my name is liu bruce</div></pre></td></tr></table></figure></p>
 <p>闭包被广泛的用在Node.js,使用在Node.js的异步,非块结构.jquery也广泛的使用闭包.下面举个经典的jquery闭包应用:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"> var selections=[];</div><div class="line">     $(<span class="string">".niners"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      selections.push(this.prop(<span class="string">"name"</span>));</div><div class="line">   &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>==Closures’ Rules and Side Effects==</p>
 <p>下面我们谈谈闭包的使用准则和副作用.</p>
 <p>1.闭包可以访问它的外层函数的变量，即使该外层函数已经返回(执行return):<br>  关于闭包中最难同时也是最重要的特点之一就是：即使闭包的外层函数已经执行return,但是它还是可以访问外层函数的变量.</p>
@@ -413,15 +414,6 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/24/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
-  
   
     <a href="/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">聊聊Javascript中神奇的关键字this</div>
@@ -437,7 +429,7 @@
 <div class="share_jia">
 	<!-- JiaThis Button BEGIN -->
 	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到: &nbsp;  asfad</span>
+		<span class="jiathis_txt">分享到: &nbsp; </span>
 		<a class="jiathis_button_facebook"></a> 
     <a class="jiathis_button_twitter"></a>
     <a class="jiathis_button_plus"></a> 

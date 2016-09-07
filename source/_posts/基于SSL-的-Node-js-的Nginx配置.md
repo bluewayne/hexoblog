@@ -19,6 +19,7 @@ Nginx是一个非常高效的HTTP服务器，同时也是一个非常优秀的�
 
 先假设你们电脑里面已经安装好Node.js,接下来我们之间讨论如何安装Ngnix.
 
+
 (1)在MAC安装
 
 如果你的电脑是MAC你可以很方便的用[Homebrew](http://brew.sh/)安装.步骤如下：
@@ -36,6 +37,8 @@ sudo nginx
 
 Ngnix的配置文件目录在:
 /usr/local/etc/nginx/nginx.conf.
+
+<!--more-->
 
 (2)在Ubuntu安装:
 如果你使用的Ubuntu环境可以使用下面的命令安装

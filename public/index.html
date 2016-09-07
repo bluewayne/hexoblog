@@ -299,7 +299,7 @@
 <!--a-->
 <!--<div>3</div>-->
 <!--b-->
-<!--<div>4</div>-->
+<!--<div>1</div>-->
 <!--c-->
 <!--<div>1</div>-->
 <!--d-->
@@ -311,21 +311,21 @@
 <!--g-->
 <!--<div></div>-->
 <!--h-->
-<!--<div>2</div>-->
+<!--<div>0</div>-->
 <!--i-->
-<!--<div>page/2/</div>-->
+<!--<div></div>-->
 <!--j-->
 <!--<div>index.html</div>-->
 
 
 
   
-    <article id="post-hello-worlda" class="article article-type-post" itemscope
+    <article id="post-xian-tan-javascriptde-bi-bao-ji-zhi" class="article article-type-post" itemscope
          itemprop="blogPost">
     <!---->
     <!--<div class="article-meta">-->
         <!--<span  class="article-date">
-  	<time datetime="2016-09-06T03:58:29.000Z" itemprop="datePublished">2016-09-06</time>
+  	<time datetime="2016-07-11T13:17:18.000Z" itemprop="datePublished">2016-07-11</time>
 </span>-->
     <!--</div>-->
     <!---->
@@ -339,7 +339,7 @@
             
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/hello-worlda/">Hello Worlda</a>
+      <a class="article-title" href="/2016/07/11/xian-tan-javascriptde-bi-bao-ji-zhi/">闲谈javascript的闭包机制</a>
     </h1>
   
 
@@ -348,20 +348,11 @@
                 <div class="article-meta">
                     
                     <span  class="article-date">
-  	<time datetime="2016-09-06T03:58:29.000Z" itemprop="datePublished">2016-09-06</time>
+  	<time datetime="2016-07-11T13:17:18.000Z" itemprop="datePublished">2016-07-11</time>
 </span>
                     
 
                     <!--| 分类于 技术水波文 | 92条评论 |  9891-->
-
-                    
-                    &nbsp; | &nbsp;
-                    
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Diary/">Diary</a>
-	</div>
-
-
 
                     
 
@@ -372,8 +363,8 @@
                     
                     <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/06/hello-worlda/#article-comments" itemprop="discussionUrl">
-                    <span class="post-comments-count ds-thread-count" data-thread-key="hello-worlda"
+                <a href="/2016/07/11/xian-tan-javascriptde-bi-bao-ji-zhi/#article-comments" itemprop="discussionUrl">
+                    <span class="post-comments-count ds-thread-count" data-thread-key="xian-tan-javascriptde-bi-bao-ji-zhi"
                           itemprop="commentsCount"></span>
                 </a>
               </span>
@@ -382,7 +373,7 @@
 
                     
 
-                    <span id="/2016/09/06/hello-worlda/" class="leancloud_visitors" data-flag-title="Hello Worlda ">
+                    <span id="/2016/07/11/xian-tan-javascriptde-bi-bao-ji-zhi/" class="leancloud_visitors" data-flag-title="闲谈javascript的闭包机制 ">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,12 +396,13 @@
         <!---->
         <div class="article-entry" itemprop="articleBody">
             
-            <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+            <p>转载请注明链接 <a href="http://www.brusport.com/xian-tan-javascriptde-bi-bao-ji-zhi/">http://www.brusport.com/xian-tan-javascriptde-bi-bao-ji-zhi/</a></p>
+<p>闭包可以让javacript coder写出更好，更创造性，更精简的代码.不管你javacript的经验如何,可以确定的是你将不可避免的时常遇到闭包.也许在你的理解范围内，闭包看起来有点复杂，但是通过阅读本文，闭包将可以被很容易得理解.</p>
+<p>==What is a closure?==</p>
+<p>闭包的英文名是closure,直译就是关闭，关口.javacript中的闭包就是一个内嵌/内部函数，它可以访问它的直接外层函数的变量.闭包有三个scope chain(其实就是域链):它可以访问自己的域范围里面的变量,它可以范围它的直接外层函数的变量，它还可以访问全局变量(一般指window中的变量).</p>
+<p>这个内部函数(闭包)不但可以访问它直接外部函数的变量，还可以访问外部函数的参数.但是要注意的是，内部函数不可以访问外部函数参数的arguments对象。</p>
+<p>下面我们举个简单的闭包例子<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> showName(firstName,lastName)&#123;</div><div class="line"> <span class="built_in">return</span> (<span class="keyword">function</span> <span class="function"><span class="title">makeFullName</span></span>()&#123;</div><div class="line">       <span class="built_in">return</span> <span class="string">'my name is '</span>+firstName+<span class="string">' '</span>+lastName+<span class="string">' '</span>;</div><div class="line">    &#125;)();</div><div class="line">&#125;</div><div class="line">showName(<span class="string">'liu'</span>,<span class="string">'bruce'</span>);//my name is liu bruce</div></pre></td></tr></table></figure></p>
+<p>闭包被广泛的用在Node.js,使用在Node.js的异步,非块结构.jquery也广泛的使用闭包.下面举个经典的jquery闭包应用:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"> var selections=[];</div><div class="line">     $(<span class="string">".niners"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      selections.push(this.prop(<span class="string">"name"</span>));</div><div class="line">   &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
             
         </div>
         
@@ -420,7 +412,7 @@
             
             <p class="article-more-link">
                 <a 
-                   href="/2016/09/06/hello-worlda/#more">阅读全文 »</a>
+                   href="/2016/07/11/xian-tan-javascriptde-bi-bao-ji-zhi/#more">阅读全文 »</a>
             </p>
             
             <div class="clearfix">
@@ -456,12 +448,12 @@
 
 
   
-    <article id="post-hello-worldf" class="article article-type-post" itemscope
+    <article id="post-liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this" class="article article-type-post" itemscope
          itemprop="blogPost">
     <!---->
     <!--<div class="article-meta">-->
         <!--<span  class="article-date">
-  	<time datetime="2016-08-26T05:27:16.000Z" itemprop="datePublished">2016-08-26</time>
+  	<time datetime="2016-07-09T14:51:16.000Z" itemprop="datePublished">2016-07-09</time>
 </span>-->
     <!--</div>-->
     <!---->
@@ -475,7 +467,7 @@
             
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/26/hello-worldf/">Hello Worldf</a>
+      <a class="article-title" href="/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/">聊聊Javascript中神奇的关键字this</a>
     </h1>
   
 
@@ -484,7 +476,7 @@
                 <div class="article-meta">
                     
                     <span  class="article-date">
-  	<time datetime="2016-08-26T05:27:16.000Z" itemprop="datePublished">2016-08-26</time>
+  	<time datetime="2016-07-09T14:51:16.000Z" itemprop="datePublished">2016-07-09</time>
 </span>
                     
 
@@ -499,8 +491,8 @@
                     
                     <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/26/hello-worldf/#article-comments" itemprop="discussionUrl">
-                    <span class="post-comments-count ds-thread-count" data-thread-key="hello-worldf"
+                <a href="/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/#article-comments" itemprop="discussionUrl">
+                    <span class="post-comments-count ds-thread-count" data-thread-key="liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this"
                           itemprop="commentsCount"></span>
                 </a>
               </span>
@@ -509,7 +501,7 @@
 
                     
 
-                    <span id="/2016/08/26/hello-worldf/" class="leancloud_visitors" data-flag-title="Hello Worldf ">
+                    <span id="/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/" class="leancloud_visitors" data-flag-title="聊聊Javascript中神奇的关键字this ">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -532,22 +524,25 @@
         <!---->
         <div class="article-entry" itemprop="articleBody">
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+            <p>转载请注明链接<br><a href="http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/">http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/</a><br>this是javascript中比较tricky的关键字之一.如果你不清楚它的工作的原理的话很难去使用它.</p>
+<p>下面我们以this在javacript中的事件处理中的表现来解释this的用法.</p>
+<p>==Owener==</p>
+<p>owner翻译过来过来就是拥有者的意思.<br>下面我们主要通过解释下面的这个函数doSomething()中的this指向哪个owner，来解释this的用法.</p>
+<p><code>function doSomething(){
+   this.style.color=&#39;#cc0000&#39;
+ }</code></p>
+<p>在javascript中this往往指向的是执行相应的函数的woner(环境或者宿主).或者指向包含该函数的对象.当我们定义简单的在页面中定义函数doSomething()的时候，这时候对应的owner就是页面本身，或者javascript中的window对象.一般的页面元素拥有onclick属性.它们之间的从属关系如下图:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">------------ window --------------------------------------</div><div class="line">|                                          / \           |</div><div class="line">|                                           |            |</div><div class="line">|                                          this          |</div><div class="line">|   ----------------                        |            |</div><div class="line">|   | HTML element | &lt;-- this         -----------------  |</div><div class="line">|   ----------------      |           | <span class="keyword">do</span>Something() |  |</div><div class="line">|               |         |           -----------------  |</div><div class="line">|          --------------------                          |</div><div class="line">|          | onclick property |                          |</div><div class="line">|          --------------------                          |</div><div class="line">|                                                        |</div><div class="line">----------------------------------------------------------</div></pre></td></tr></table></figure></p>
             
         </div>
         
         <div class="article-info article-info-index">
             
 
+            
+            <p class="article-more-link">
+                <a 
+                   href="/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/#more">阅读全文 »</a>
+            </p>
             
             <div class="clearfix">
                 <div class="post-eof"></div>
@@ -582,12 +577,12 @@
 
 
   
-    <article id="post-hello-worldd" class="article article-type-post" itemscope
+    <article id="post-ji-zhu-biao-ti-2" class="article article-type-post" itemscope
          itemprop="blogPost">
     <!---->
     <!--<div class="article-meta">-->
         <!--<span  class="article-date">
-  	<time datetime="2016-08-26T05:23:14.000Z" itemprop="datePublished">2016-08-26</time>
+  	<time datetime="2016-06-23T07:46:11.000Z" itemprop="datePublished">2016-06-23</time>
 </span>-->
     <!--</div>-->
     <!---->
@@ -601,7 +596,7 @@
             
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/26/hello-worldd/">Hello Worldd</a>
+      <a class="article-title" href="/2016/06/23/ji-zhu-biao-ti-2/">基于SSL 的 Node.js 的Nginx配置</a>
     </h1>
   
 
@@ -610,7 +605,7 @@
                 <div class="article-meta">
                     
                     <span  class="article-date">
-  	<time datetime="2016-08-26T05:23:14.000Z" itemprop="datePublished">2016-08-26</time>
+  	<time datetime="2016-06-23T07:46:11.000Z" itemprop="datePublished">2016-06-23</time>
 </span>
                     
 
@@ -625,8 +620,8 @@
                     
                     <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/26/hello-worldd/#article-comments" itemprop="discussionUrl">
-                    <span class="post-comments-count ds-thread-count" data-thread-key="hello-worldd"
+                <a href="/2016/06/23/ji-zhu-biao-ti-2/#article-comments" itemprop="discussionUrl">
+                    <span class="post-comments-count ds-thread-count" data-thread-key="ji-zhu-biao-ti-2"
                           itemprop="commentsCount"></span>
                 </a>
               </span>
@@ -635,7 +630,7 @@
 
                     
 
-                    <span id="/2016/08/26/hello-worldd/" class="leancloud_visitors" data-flag-title="Hello Worldd ">
+                    <span id="/2016/06/23/ji-zhu-biao-ti-2/" class="leancloud_visitors" data-flag-title="基于SSL 的 Node.js 的Nginx配置 ">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -658,22 +653,28 @@
         <!---->
         <div class="article-entry" itemprop="articleBody">
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+            <p><strong>转载请注明链接</strong></p>
+<p><strong><a href="http://www.brusport.com/ji-zhu-biao-ti-2/">http://www.brusport.com/ji-zhu-biao-ti-2/</a></strong></p>
+<p>Nginx是一个非常高效的HTTP服务器，同时也是一个非常优秀的反向代理服务器.不想传统的服务器,ngnix遵循事件驱动的异步框架.因此内存占有量底，但是效率非常高.如果你的web 应用是基于Node.js的可以严肃的考虑让Nginx充当反向代理服务器.Ngnix可以非常高效的处理静态资源.对于其他的网络请求它跟Node.js对话然后发送相应给客户端(一般指浏览器).这篇文章我们将讨论怎么用Nginx配置Node.js.of course我们同时会讨论如何在Ngnix服务器中配置SLL.</p>
+<p>==安装Ngnix==</p>
+<p>先假设你们电脑里面已经安装好Node.js,接下来我们之间讨论如何安装Ngnix.</p>
+<p>(1)在MAC安装</p>
+<p>如果你的电脑是MAC你可以很方便的用<a href="http://brew.sh/">Homebrew</a>安装.步骤如下：</p>
+<p>Homebrew 需要你的用户名来使用命令chown，命令如下:<br>sudo chown -R ‘username here’ /usr/local<br><a href="http://www.demopu.com/doc/linux/chown.html">chown的使用说明</a></p>
+<p>然后用下面两个命令安装Nginx:<br>brew link pcre<br>brew install nginx</p>
+<p>一旦安装成功，用下面命令启动Ngnix<br>sudo nginx</p>
+<p>Ngnix的配置文件目录在:<br>/usr/local/etc/nginx/nginx.conf.</p>
             
         </div>
         
         <div class="article-info article-info-index">
             
 
+            
+            <p class="article-more-link">
+                <a 
+                   href="/2016/06/23/ji-zhu-biao-ti-2/#more">阅读全文 »</a>
+            </p>
             
             <div class="clearfix">
                 <div class="post-eof"></div>
@@ -708,11 +709,6 @@
 
 
   
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"> </a>
-
-    </nav>
   
 </div>
       <footer id="footer">
