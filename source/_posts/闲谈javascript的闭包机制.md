@@ -22,11 +22,12 @@ categories: javascript
 下面我们举个简单的闭包例子
 ``` bash
 function showName(firstName,lastName){
- return (function makeFullName(){
-       return 'my name is '+firstName+' '+lastName+' ';
-    })();
+	return (function makeFullName){
+		return 'my name is '+firstName+' '+lastName+' ';
+	})();
 }
-showName('liu','bruce');//my name is liu bruce
+
+showName('liu',bruce);//my name is liu bruce
 ```
 闭包被广泛的用在Node.js,使用在Node.js的异步,非块结构.jquery也广泛的使用闭包.下面举个经典的jquery闭包应用:
 ``` bash
