@@ -444,10 +444,8 @@ owner翻译过">
 <p>==Combination==</p>
 <p>下面我们说个技巧，如果我们既要想用代码内联形式做事件处理注册，又想对应的处理函数中的 this能正确执行，可以参考下面的做法:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;element onclick=<span class="string">"doSomething(this)"</span>&gt;</div><div class="line"><span class="keyword">function</span> <span class="keyword">do</span>Something(obj) &#123;</div><div class="line">	// this is present <span class="keyword">in</span> the event handler and is sent to the <span class="keyword">function</span></div><div class="line">	// obj now refers to the HTML element, so we can <span class="keyword">do</span></div><div class="line">	obj.style.color = <span class="string">'#cc0000'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>thx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">refer to http://www.quirksmode.org/js/this.html</div></pre></td></tr></table></figure>
-<p><code>bruce liu                           --2016,7.9.</code></p>
-</element></element>
+<p>refer to <a href="http://www.quirksmode.org/js/this.html" target="_blank" rel="external">http://www.quirksmode.org/js/this.html</a></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bruce liu                                                                -<span class="number">-2016</span>,<span class="number">7.9</span>.</div></pre></td></tr></table></figure></element></element>
             
         </div>
         

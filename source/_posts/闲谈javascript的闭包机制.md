@@ -131,10 +131,9 @@ console.log(stalloneID.id()); // 103
 
 refer to http://javascriptissexy.com/understand-javascript-closures-with-ease/
 
-thx
 
-``` bash
-bruce liu                           --2016,7.11.
+```
+bruce liu                                                                --2016,7.11.
 ```
 
 

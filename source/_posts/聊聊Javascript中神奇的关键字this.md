@@ -169,10 +169,9 @@ function doSomething(obj) {
 }
 ```
 
-thx
-
-``` bash
 refer to http://www.quirksmode.org/js/this.html
-```
 
-`bruce liu                           --2016,7.9.  `
+
+```
+bruce liu                                                                --2016,7.9.
+```

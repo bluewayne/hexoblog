@@ -138,6 +138,7 @@ server {
 refer to https://www.sitepoint.com/configuring-nginx-ssl-node-js/
 
 thx a lot
+```
+Bruce liu                                                                               --2016.7.2
+```
 
-                                          Bruce liu
-                                          2016.7.2
