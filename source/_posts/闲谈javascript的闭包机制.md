@@ -9,7 +9,7 @@ categories: javascript
 ---
 
 
-转载请注明链接 http://www.brusport.com/xian-tan-javascriptde-bi-bao-ji-zhi/
+转载请注明链接 http://www.brusport.com/2016/07/11/xian-tan-javascriptde-bi-bao-ji-zhi/
 
 闭包可以让javacript coder写出更好，更创造性，更精简的代码.不管你javacript的经验如何,可以确定的是你将不可避免的时常遇到闭包.也许在你的理解范围内，闭包看起来有点复杂，但是通过阅读本文，闭包将可以被很容易得理解.
 

@@ -10,7 +10,7 @@ categories: nginx
 
 **转载请注明链接**
 
-**http://www.brusport.com/ji-zhu-biao-ti-2/**
+**http://www.brusport.com/2016/06/23/ji-zhu-biao-ti-2/**
 
 
 Nginx是一个非常高效的HTTP服务器，同时也是一个非常优秀的反向代理服务器.不想传统的服务器,ngnix遵循事件驱动的异步框架.因此内存占有量底，但是效率非常高.如果你的web 应用是基于Node.js的可以严肃的考虑让Nginx充当反向代理服务器.Ngnix可以非常高效的处理静态资源.对于其他的网络请求它跟Node.js对话然后发送相应给客户端(一般指浏览器).这篇文章我们将讨论怎么用Nginx配置Node.js.of course我们同时会讨论如何在Ngnix服务器中配置SLL.

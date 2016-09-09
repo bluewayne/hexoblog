@@ -9,7 +9,7 @@ categories: javascript
 ---
 
 转载请注明链接
-http://www.brusport.com/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/
+http://www.brusport.com/2016/07/09/liao-liao-javascriptzhong-shen-qi-de-guan-jian-zi-this/
 this是javascript中比较tricky的关键字之一.如果你不清楚它的工作的原理的话很难去使用它.
 
 下面我们以this在javacript中的事件处理中的表现来解释this的用法.
