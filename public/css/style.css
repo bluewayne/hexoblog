@@ -336,9 +336,13 @@ a {
   }
   #container .article .article-meta {
     width: auto;
+    font-size: 12px;
     height: 30px;
     margin-top: -5px;
     position: ralative;
+  }
+  #container .article .article-meta .post-comments-count {
+    display: none;
   }
   #container .article .article-meta .article-tag-list {
     margin-top: 7px;
@@ -367,6 +371,13 @@ a {
   #container .article #article-nav-older {
     float: none;
     display: block;
+  }
+  #container .article-category:before {
+    display: none;
+  }
+  #container .tagcloud a {
+    padding: 0px;
+    margin: 0px;
   }
   #container .share {
     padding: 3px 10px;
@@ -1290,140 +1301,6 @@ a {
     transform: scale(1);
   }
 }
-.archives-wrap {
-  position: relative;
-  margin: 0 30px;
-  padding-right: 60px;
-  border-bottom: 1px solid #eee;
-  background: #fff;
-}
-.archives-wrap:first-child {
-  margin-top: 30px;
-}
-.archives-wrap:last-child {
-  margin-bottom: 80px;
-}
-.archives-wrap .archive-year-wrap {
-  line-height: 35px;
-  width: 200px;
-  position: absolute;
-  padding-top: 15px;
-  font-size: 1.8em;
-}
-.archives-wrap .archive-year-wrap a {
-  color: #666;
-  font-weight: bold;
-  padding-left: 48px;
-}
-.archives {
-  position: relative;
-}
-.archives .article-info {
-  border: none;
-}
-.archives .archive-article {
-  margin-left: 200px;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-  border-top: 1px solid #fff;
-  position: relative;
-}
-.archives .archive-article:first-child {
-  border-top: none;
-}
-.archives .archive-article:last-child {
-  border-bottom: none;
-}
-.archives .archive-article-title {
-  font-size: 16px;
-  color: #333;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -ms-transition: color 0.3s;
-  transition: color 0.3s;
-}
-.archives .archive-article-title:hover {
-  color: #657b83;
-}
-.archives .archive-article-title span {
-  display: block;
-  color: #a8a8a8;
-  font-size: 12px;
-  line-height: 14px;
-  height: 7px;
-  padding-left: 2px;
-}
-.archives .archive-article-title span:before {
-  display: inline-block;
-  content: "“";
-  font-family: serif;
-  font-size: 30px;
-  float: left;
-  margin: 4px 4px 0 -12px;
-  color: #c8c8c8;
-}
-.archive-article-inner .archive-article-header {
-  position: relative;
-}
-.archive-article-inner .article-meta {
-  position: relative;
-  float: right;
-  margin-top: -10px;
-  color: #555;
-  background: none;
-  text-align: right;
-  width: auto;
-}
-.archive-article-inner .article-meta .article-date time {
-  color: #aaa;
-}
-.archive-article-inner .article-meta .archive-article-date,
-.archive-article-inner .article-meta .article-tag-list {
-  margin-right: 30px;
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  zoom: 1;
-  color: #666;
-  font-size: 14px;
-}
-.archive-article-inner .article-meta .archive-article-date {
-  cursor: default;
-  font-size: 12px;
-  margin-bottom: 5px;
-  margin-top: -10px;
-}
-.archive-article-inner .article-meta .archive-article-date time:before {
-  content: "\f073";
-  color: #999;
-  position: relative;
-  margin-right: 10px;
-  font: 16px FontAwesome;
-}
-.archive-article-inner .article-meta .article-category {
-  display: inline-block;
-}
-.archive-article-inner .article-meta .article-category:before {
-  margin-top: 1px;
-}
-.archive-article-inner .article-meta .article-category .article-category-link {
-  width: auto;
-  max-width: 83px;
-  padding-left: 10px;
-}
-.archive-article-inner .article-meta .article-tag-list {
-  margin-top: 0px;
-}
-.archive-article-inner .article-meta .article-tag-list:before {
-  left: 15px;
-}
-.archive-article-inner .article-meta .article-tag-list .article-tag-list-item {
-  display: inline-block;
-  width: auto;
-  max-width: 83px;
-  padding-left: 8px;
-  font-size: 12px;
-}
 .article-entry pre,
 .article-entry .highlight {
   background: #e8f2fb;
@@ -2030,6 +1907,12 @@ pre .css ~ * .id {
   position: absolute;
   top: 7px;
   left: 2px;
+}
+.tagcloud a.article-category-link {
+  background: #ff945c;
+}
+.tagcloud a.article-category-link:before {
+  border-right-color: #ff945c;
 }
 .tagcloud a.color1 {
   background: #ff945c;
@@ -3082,6 +2965,15 @@ input[type="tel"]:focus {
 @media all and (max-width: 960px) {
   .btn-mobile-menu {
     display: block;
+  }
+  .btn-mobile-menu .fa-list:before {
+    content: "\f03a";
+    color: #999;
+    font: 17px FontAwesome;
+  }
+  .btn-mobile-menu .fa-angle-up:before {
+    content: "\f106";
+    font: 17px FontAwesome;
   }
   .panel-main {
     display: table;
