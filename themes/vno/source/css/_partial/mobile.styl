@@ -87,9 +87,19 @@
     //}
     .article-meta{
         width: auto;
+        font-size: 12px;
         height: 30px;
         margin-top: -5px;
         position: ralative;
+        .article-date{
+            //display :block;
+            //padding-bottom :10px;
+        }
+
+        .post-comments-count{
+            display :none;
+        }
+
         //.article-date{
         //    font-size: 12px;
         //    border-radius: 0;
@@ -153,6 +163,23 @@
         display: block;
     }
 }
+    
+.article-category{
+    &:before{
+        display :none;
+
+    }
+}
+
+.tagcloud{
+    a{
+        //float: left;
+        padding:0px;
+        margin: 0px;
+    }
+}
+
+
 .share{
     padding: 3px 10px;
 }
@@ -193,6 +220,7 @@
         }
     }
     .article-meta{
+
         .archive-article-date{
             font-size: 12px;
             margin-right: 10px;

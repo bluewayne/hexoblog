@@ -2,7 +2,7 @@ require([], function (){
 
 	var isMobileInit = false;
 	var loadMobile = function(){
-		require([yiliaConfig.root + '/js/mobile.js'], function(mobile){
+		require(['/js/mobile.js'], function(mobile){
 			mobile.init();
 			isMobileInit = true;
 		});
@@ -45,7 +45,7 @@ require([], function (){
 		if(w >= 700){
 			loadPC();
 		}else{
-			loadMobile();
+			//loadMobile();
 		}
 	});
 
